@@ -65,7 +65,7 @@
     width: '100%',
     videoId: 'M7lc1UVf-VE',
     playerVars: {
-        origin: 'https://lucascortes.github.io',
+        origin: window.location.origin,
         rel: 0,
         modestbranding: 1
     },
@@ -79,6 +79,7 @@
 
             // Asegurar que existan origin y host válidos
             if (!config.playerVars) config.playerVars = {};
+            config.playerVars.origin = window.location.origin;  
             config.playerVars.host = "https://www.youtube.com";
 
             player = new YT.Player('player', config);
